@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Interactive map</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="icon" href="https://cerrosdebogota.org/wp-content/uploads/2020/06/cropped-FCB-192x192.png" sizes="192x192" />
+  <link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="front-div">
+
+    <img class="front-image faze map" src="photos/mapFullSize1.png" usemap="#image-map">
+    <map name="image-map">
+      <area class="mapIMG" ID="Rio Tunjuelo" shape="poly"
+        coords="678, 601, 672, 592, 674, 572, 666, 560, 664, 553, 667, 547, 670, 541, 674, 547, 681, 560, 690, 556, 696, 553, 725, 559, 739, 565, 756, 561, 768, 555, 780, 548, 793, 548, 794, 554, 793, 558, 798, 568, 798, 577, 786, 590, 796, 597, 799, 601, 798, 605, 804, 614, 807, 620, 815, 627, 818, 621, 825, 631, 832, 631, 841, 649, 861, 655, 866, 658, 876, 660, 878, 658, 890, 671, 885, 677, 886, 683, 890, 687, 885, 697, 881, 699, 885, 711, 854, 712, 849, 714, 840, 713, 832, 717, 819, 713, 808, 723, 820, 724, 837, 734, 842, 743, 828, 745, 822, 745, 812, 746, 814, 753, 811, 759, 813, 773, 814, 788, 830, 812, 826, 819, 824, 852, 776, 871, 759, 870, 758, 861, 749, 855, 757, 843, 762, 843, 780, 814, 774, 811, 780, 800, 777, 797, 777, 788, 786, 790, 776, 776, 778, 764, 764, 764, 757, 760, 745, 760, 741, 768, 735, 768, 726, 777, 722, 775, 725, 756, 730, 748, 729, 731, 725, 723, 733, 718, 728, 710, 724, 711, 724, 687, 717, 681, 722, 677, 713, 667, 713, 648, 694, 629, 693, 619" />
+      <area class="mapIMG" ID="Cuenca Tintal" shape="poly"
+        coords="672, 543, 681, 560, 693, 553, 723, 558, 738, 564, 764, 557, 778, 548, 788, 548, 788, 539, 791, 535, 790, 527, 796, 520, 793, 513, 796, 510, 785, 494, 778, 497, 769, 492, 761, 497, 755, 493, 754, 502, 747, 499, 747, 504, 740, 502, 729, 509, 725, 517, 720, 518, 722, 509, 718, 511, 710, 505, 700, 515, 695, 520, 701, 522, 690, 519, 692, 526, 679, 527, 678, 521, 668, 522, 669, 526, 679, 529, 678, 535, 673, 535, 678, 543" />
+      <area class="mapIMG" ID="Quebrada de Fucha" shape="poly"
+        coords="830, 812, 813, 787, 814, 776, 810, 758, 816, 751, 814, 747, 819, 745, 822, 748, 824, 744, 829, 747, 846, 743, 849, 755, 857, 749, 878, 750, 880, 752, 879, 779, 877, 786, 865, 793, 857, 787, 852, 795, 839, 800, 830, 815" />
+      <area class="mapIMG" ID="Quebrada Yomasa" shape="poly"
+        coords="849, 755, 860, 748, 880, 749, 882, 752, 888, 747, 894, 753, 908, 716, 897, 713, 882, 713, 866, 710, 848, 715, 838, 713, 830, 717, 822, 714, 803, 725, 818, 724, 839, 736, 842, 744, 847, 743" />
+      <area class="mapIMG" ID="Rio Fucha" shape="poly"
+        coords="755, 471, 758, 466, 763, 471, 760, 477, 753, 480, 750, 485, 749, 481, 742, 484, 756, 490, 757, 494, 761, 497, 768, 492, 782, 498, 785, 494, 797, 510, 794, 517, 796, 522, 788, 529, 792, 536, 785, 540, 787, 549, 794, 549, 791, 560, 797, 566, 798, 578, 788, 591, 796, 596, 798, 606, 804, 619, 815, 626, 817, 622, 826, 629, 832, 631, 841, 650, 862, 653, 867, 659, 876, 660, 878, 658, 890, 671, 883, 678, 884, 683, 891, 688, 885, 697, 880, 698, 884, 712, 900, 713, 906, 717, 915, 712, 928, 716, 928, 701, 936, 678, 943, 673, 941, 666, 947, 657, 948, 652, 943, 649, 946, 644, 938, 623, 941, 595, 939, 576, 936, 574, 934, 568, 924, 568, 917, 568, 913, 575, 907, 577, 903, 571, 896, 570, 898, 562, 904, 556, 910, 554, 905, 549, 909, 548, 901, 545, 905, 541, 908, 537, 905, 535, 912, 534, 906, 530, 907, 523, 893, 516, 882, 517, 882, 523, 873, 523, 871, 511, 853, 491, 841, 504, 837, 501, 843, 496, 838, 494, 834, 497, 831, 495, 835, 491, 842, 492, 844, 489, 840, 486, 852, 473, 848, 471, 856, 460, 847, 454, 831, 475, 825, 470, 828, 463, 819, 466, 816, 469, 808, 464, 818, 458, 813, 447, 802, 449, 781, 443, 763, 431, 754, 430, 754, 434, 731, 438, 736, 443, 744, 440, 740, 448, 746, 459, 737, 469, 735, 475, 741, 478, 741, 475, 745, 476, 748, 473, 751, 476" />
+      <area class="mapIMG" ID="Humedal Jaun Amerillo" shape="poly"
+        coords="764, 432, 794, 447, 806, 450, 813, 451, 817, 457, 807, 462, 813, 467, 817, 468, 818, 466, 828, 461, 828, 469, 828, 472, 831, 474, 846, 457, 833, 445, 832, 439, 805, 402, 800, 403, 801, 397, 793, 401, 790, 398, 781, 400, 773, 406, 770, 409, 762, 408, 762, 404, 756, 413, 764, 417" />
+      <area class="mapIMG" ID="Rio Salitre" shape="poly"
+        coords="918, 568, 935, 569, 938, 564, 936, 554, 944, 543, 941, 539, 946, 523, 944, 521, 948, 516, 950, 504, 951, 504, 950, 501, 954, 496, 960, 498, 966, 495, 975, 495, 978, 487, 985, 479, 983, 471, 971, 464, 972, 453, 973, 451, 966, 446, 970, 444, 970, 441, 975, 421, 979, 420, 976, 415, 962, 418, 948, 416, 942, 402, 931, 397, 935, 385, 932, 371, 926, 365, 921, 366, 921, 361, 913, 359, 908, 353, 901, 361, 892, 360, 885, 354, 879, 359, 852, 358, 837, 354, 832, 359, 824, 356, 818, 358, 820, 363, 808, 364, 814, 374, 804, 368, 808, 374, 800, 375, 798, 385, 806, 388, 804, 391, 808, 399, 806, 402, 833, 443, 844, 458, 848, 454, 856, 460, 849, 469, 850, 472, 840, 487, 844, 490, 841, 493, 837, 489, 833, 496, 838, 498, 841, 493, 843, 494, 838, 499, 841, 503, 854, 490, 868, 509, 872, 510, 870, 520, 880, 523, 882, 517, 900, 519, 907, 524, 906, 532, 911, 533, 905, 533, 906, 537, 903, 544, 908, 546, 904, 555, 897, 568, 905, 571, 910, 577, 916, 576" />
+      <area class="mapIMG" ID="Torca" shape="poly"
+        coords="816, 363, 814, 355, 823, 353, 823, 346, 820, 346, 826, 340, 825, 337, 824, 329, 823, 329, 824, 328, 824, 324, 827, 315, 828, 316, 835, 315, 834, 307, 839, 300, 839, 305, 844, 299, 850, 300, 853, 313, 863, 304, 857, 303, 863, 295, 862, 294, 874, 286, 867, 280, 869, 278, 863, 275, 866, 266, 870, 266, 871, 273, 876, 268, 864, 253, 881, 244, 886, 250, 886, 258, 892, 258, 892, 252, 894, 247, 896, 253, 900, 252, 901, 259, 908, 257, 912, 250, 919, 255, 918, 250, 922, 255, 926, 252, 929, 258, 929, 261, 940, 262, 951, 265, 960, 265, 980, 266, 983, 274, 982, 283, 991, 291, 985, 299, 975, 303, 971, 302, 968, 307, 965, 314, 966, 334, 964, 341, 960, 345, 961, 353, 977, 365, 975, 373, 979, 379, 977, 416, 966, 419, 948, 413, 942, 401, 930, 397, 934, 388, 931, 378, 931, 369, 928, 368, 926, 365, 922, 368, 921, 361, 912, 360, 906, 353, 903, 362, 890, 360, 887, 353, 882, 358, 852, 358, 852, 357, 837, 355, 835, 358, 832, 359, 827, 356, 823, 355, 822, 358, 821, 363" />
+      <area class="mapIMG" ID="Rio Teusaca" shape="poly"
+        coords="953, 651, 957, 645, 966, 643, 978, 645, 978, 635, 982, 622, 978, 616, 982, 615, 983, 605, 986, 601, 998, 583, 993, 577, 996, 572, 995, 564, 1002, 560, 998, 555, 1008, 544, 1006, 540, 1034, 528, 1043, 510, 1060, 493, 1074, 459, 1122, 422, 1129, 423, 1144, 441, 1153, 423, 1150, 395, 1167, 389, 1148, 379, 1124, 362, 1122, 338, 1115, 327, 1115, 315, 1110, 297, 1115, 287, 1115, 278, 1095, 254, 1096, 232, 1093, 224, 1096, 207, 1095, 195, 1104, 185, 1104, 173, 1094, 160, 1110, 137, 1088, 121, 1096, 104, 1076, 97, 1060, 97, 1047, 100, 1035, 98, 1027, 86, 1004, 75, 998, 77, 984, 94, 990, 112, 1005, 129, 1003, 136, 1013, 146, 1009, 173, 994, 226, 986, 236, 977, 259, 977, 267, 980, 268, 983, 270, 982, 285, 991, 293, 975, 303, 971, 302, 965, 311, 964, 340, 961, 344, 962, 353, 976, 365, 974, 370, 978, 382, 975, 394, 978, 398, 975, 416, 967, 447, 971, 451, 969, 456, 974, 459, 972, 466, 984, 474, 983, 484, 979, 489, 975, 494, 966, 495, 954, 497, 950, 504, 945, 513, 949, 516, 942, 520, 945, 525, 940, 539, 944, 543, 937, 556, 936, 568, 937, 576, 939, 579, 938, 624, 944, 636, 947, 647" />
+    </map>
+
+
+    <div class="round-rect">
+      <h1 class="emoji ">🔎</h1>
+      <h2 class="title">¿En que cuencas vives?</h2>
+      <h5 class="info">Haga clic para apprender sobre las cuencas</h5>
+
+    </div>
+
+  </div>
+
+<div id = "carousel" class="hide hiddenPhoto">
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride = "carousel" >
+        <ol class="carousel-indicators">
+           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+         </ol>
+        <div class="carousel-inner ">
+          <div class="carousel-item active">
+            <img class="h-100 d-block" src="maps/Rio Tunjuelo.jpg" alt="First slide">
+          </div>
+          <div class= " carousel-item">
+            <img class="w-100 d-block" src="photos/Rio Tunjuelo.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="drawings/Rio Tunjuelo.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+</div>
+
+
+  <!-- <img id="hiddenMap" class="info-map hiddenPhoto hide" src="" alt="">
+
+  <img id="hiddenPhoto" class="info-photo hiddenPhoto hide" src="" alt=""> -->
+
+  <div class="round-rect-lrg hide">
+    <!-- <h1 class="info-emoji">logo aqui</h1> -->
+    <h2 class="info-title">¿En que cuencas vives?</h2>
+    <h5 class="info-info">Haga clic para apprender sobre las cuencas</h5>
+  </div>
+
+
+  <!-- <div class="col-lg-6">
+      <img class="front-image info-image map" src="photos/plz-page-001.jpg" usemap="#image-map">
+
+    </div>
+  </div> -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.maphilight.js"></script>
+  <script src="js/imageMapResizer.min.js" charset="utf-8"></script>
+  <script src="js/appInfo.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>
