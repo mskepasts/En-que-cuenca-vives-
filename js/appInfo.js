@@ -39,13 +39,13 @@ $('.map').maphilight({
 
 function writeInfo(name) {
   $(".front-image").addClass("inBack");
-  fadeUnfadeTwoElements(".round-rect", ".round-rect-lrg");
+  fadeUnfadeTwoElements(".round", ".round-lrg");
   $("#hiddenPhoto").attr("src", "photos/" + name + ".jpg");
   $("#hiddenMap").attr("src", "maps/" + name + ".jpg");
   $(".info-photo").removeClass("hide hiddenPhoto");
   $("#carousel").removeClass("hide hiddenPhoto");
   $(".info-map").removeClass("hide hiddenPhoto");
-  // $(".round-rect-lrg").removeClass("hide");
+  // $(".round-lrg").removeClass("hide");
   $(".info-title").text(names[names.indexOf(name)]);
   $(".info-info").text(info[names.indexOf(name)]);
 
@@ -54,94 +54,94 @@ function writeInfo(name) {
 }
 
 function switchSame(name) {
-  if (name != $(".info-title").text()){
-  fadeUnfadeOneElement(".round-rect-lrg", name);
+  if (name != $(".info-title").text()) {
+    fadeUnfadeOneElement(".round-lrg", name);
 
-  $("#hiddenPhoto").attr("src", "photos/" + name + ".jpg");
-  $("#hiddenMap").attr("src", "maps/" + name + ".jpg");
-}
-  // $(".round-rect-lrg").removeClass("hide");
+    $("#hiddenPhoto").attr("src", "photos/" + name + ".jpg");
+    $("#hiddenMap").attr("src", "maps/" + name + ".jpg");
+  }
+  // $(".round-lrg").removeClass("hide");
 
 }
 
 function fadeUnfadeOneElement(element, name) {
-    var op = 1;  // initial opacity
-    $(element).css("display", "block");
+  var op = 1; // initial opacity
+  $(element).css("display", "block");
 
-    var timer = setInterval(function () {
-        if (op <= .1){
-            clearInterval(timer);
-            $(element).removeClass("gone");
-            $(".info-title").text(names[names.indexOf(name)]);
-            $(".info-info").text(info[names.indexOf(name)]);
+  var timer = setInterval(function() {
+    if (op <= .1) {
+      clearInterval(timer);
+      $(element).removeClass("gone");
+      $(".info-title").text(names[names.indexOf(name)]);
+      $(".info-info").text(info[names.indexOf(name)]);
 
-            unfade(element);
-        }
-        $(element).css("opacity", op);
-        $(element).css("filter", 'alpha(opacity=' + op * 100 + ")");
-        op -= op * 0.1;
-    }, fadeSpeed);
+      unfade(element);
+    }
+    $(element).css("opacity", op);
+    $(element).css("filter", 'alpha(opacity=' + op * 100 + ")");
+    op -= op * 0.1;
+  }, fadeSpeed);
 
 }
 
 
 function unfade(element) {
-    var op = 0.1;  // initial opacity
-    $(element).css("display", "block");
+  var op = 0.1; // initial opacity
+  $(element).css("display", "block");
 
-    var timer = setInterval(function () {
-        if (op >= 1){
-            clearInterval(timer);
-            $(element).removeClass("gone");
-        }
-        $(element).css("opacity", op);
-        $(element).css("filter", 'alpha(opacity=' + op * 100 + ")");
-        op += op * 0.1;
-    }, fadeSpeed);
+  var timer = setInterval(function() {
+    if (op >= 1) {
+      clearInterval(timer);
+      $(element).removeClass("gone");
+    }
+    $(element).css("opacity", op);
+    $(element).css("filter", 'alpha(opacity=' + op * 100 + ")");
+    op += op * 0.1;
+  }, fadeSpeed);
 
 }
 
 function fadeUnfadeTwoElements(element, element2) {
-    var op = 1;  // initial opacity
-    $(element).addClass("gone");
+  var op = 1; // initial opacity
+  $(element).addClass("gone");
 
-    var timer = setInterval(function () {
-        if (op <= 0.1){
-            clearInterval(timer);
-            unfade(element2);
-            $(element).hide();
-        }
+  var timer = setInterval(function() {
+    if (op <= 0.1) {
+      clearInterval(timer);
+      unfade(element2);
+      $(element).hide();
+    }
 
-        $(element).css("opacity", op);
-        $(element).css("filter", 'alpha(opacity=' + op * 100 + ")");
-        op -= op * 0.1;
-    }, fadeSpeed);
+    $(element).css("opacity", op);
+    $(element).css("filter", 'alpha(opacity=' + op * 100 + ")");
+    op -= op * 0.1;
+  }, fadeSpeed);
 }
 
 
 function fade(element) {
-    var op = 1;  // initial opacity
-    $(element).addClass("gone");
-    var timer = setInterval(function () {
-        if (op <= 0.1){
-            clearInterval(timer);
-            $(element).hide();
-        }
+  var op = 1; // initial opacity
+  $(element).addClass("gone");
+  var timer = setInterval(function() {
+    if (op <= 0.1) {
+      clearInterval(timer);
+      $(element).hide();
+    }
 
-        $(element).css("opacity", op);
-        $(element).css("filter", 'alpha(opacity=' + op * 100 + ")");
-        op -= op * 0.1;
-    }, fadeSpeed);
+    $(element).css("opacity", op);
+    $(element).css("filter", 'alpha(opacity=' + op * 100 + ")");
+    op -= op * 0.1;
+  }, fadeSpeed);
 }
 
 
 function waitForClick() {
 
-  fadeUnfadeTwoElements(".round-rect-lrg", ".round-rect");
+  fadeUnfadeTwoElements(".round-lrg", ".round");
   $(".front-image").removeClass("inBack");
   $(".info-photo").addClass("hide hiddenPhoto");
   $(".info-map").addClass("hide hiddenPhoto");
-  $(".round-rect-lrg").addClass("hide");
+  $(".round-lrg").addClass("hide");
   $("#carousel").addClass("hide hiddenPhoto");
 
 
@@ -154,31 +154,30 @@ function waitForClick() {
 
 
 function main() {
+  $("area").click(function(event) {
+    event.preventDefault()
+  });
 
   $(".mapIMG").on("click", function(event) {
     // clicked = false;
-    if(!clicked){
-    writeInfo(event.target.id);
-    console.log(event.target.id);
-}
-    else
+    if (!clicked) {
+      writeInfo(event.target.id);
+      console.log(event.target.id);
+    } else
       another = true;
   });
 
   $(".front-div").on("click", function(event) {
-    if (another == true){
+    if (another == true) {
       switchSame(event.target.id);
       another = false;
-    }
-
-    else if (clicked) {
+    } else if (clicked) {
       console.log("still")
       waitForClick();
       clicked = false;
-    }
-    else
-      if ($(".round-rect").hasClass("gone"))
-        clicked = true;
+    } else
+    if ($(".round").hasClass("gone"))
+      clicked = true;
   });
 
 }
