@@ -180,7 +180,7 @@ display: block;
   background-color: #444;
 }
 
-/* @media (max-width: 1000px){
+@media (max-width: 1000px){
 .front-div{
   display: none;
 }
@@ -198,4 +198,4 @@ display: block;
 
 }
 
-} */
+}
