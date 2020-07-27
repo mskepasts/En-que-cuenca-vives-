@@ -18,21 +18,26 @@ h2 {
   color: #E9EBE8;
 
 }
-h5{
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-      font-size: 1.5vw;
-      margin-top: 0.85vw;
-      margin-left: 3.4vw;
-      margin-right: 3.4vw;
-      color: #4C4B63;
-}
 
 .front-image {
   display: block;
+
+  margin-left: auto;
+  margin-right: auto;
   margin: auto;
-  height: 100vh;
-  vertical-align: middle;
+  position: absolute;
+  height: 100%;
+  width: auto;
+
+
+}
+.front-image-small {
+
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+
 }
 /* If the page width is too small */
 
@@ -41,9 +46,18 @@ h5{
 }
 
 .front-div {
+display: block;
   width: 100%;
   height: 100%;
   position: absolute;
+
+  left: 0;
+}
+.front-div-small{
+  display: none;
+  width: 100%;
+  height: 100%;
+    position: absolute;
   top: 0;
   left: 0;
 }
@@ -61,10 +75,7 @@ h5{
   height: 35vw;
   width: 35vw;
   border-radius: 50%;
-  font-size: 50px;
-  color: #00000;
-  /* line-height: 500px; */
-  background: #ABA8B2;
+  display: block;
 }
 
 
@@ -77,17 +88,29 @@ h5{
   border-width: 1px;
   border-color: black;
   text-align: center;
-  position: relative;
-  top: 4vh;
+  position: absolute;
+  top: 2vh;
   left: 7.125vw;
-  /* width: 500px; */
   height: 40vw;
   width: 40vw;
   border-radius: 50%;
-  font-size: 50px;
-  color: #00000;
-  /* line-height: 500px; */
-  background: #ABA8B2;
+  display: block;
+
+}
+.second-round-lrg {
+
+  border: solid;
+  border-width: 1px;
+  border-color: black;
+  text-align: center;
+  position: absolute;
+  bottom: 2vh;
+  right: 7.125vw;
+  height: 40vw;
+  width: 40vw;
+  border-radius: 50%;
+  display: block;
+
 }
 
 .info-photo {
@@ -101,38 +124,41 @@ h5{
 
 }
 
-.carousel{
-  background-color: #4C4B63;
-  border: solid;
-  border-width: 2vw;
-  border-color: #4C4B63;
-  border-radius: 5%;
-  height: 40.83vw;
-  width: 50.25vw;
+.carousel-indicators{
+  border-radius: 50%;
+  margin: 0;
+}
+.carousel > a{
+  height: 25%;
+  transform: translateY(148%);
+}
+
+.carousel-inner{
+    border-radius: 50%;
+  height: 100%;
+}
+.carousel-item{
+  border-radius: 50%;
+}
+
+.carouselCircle{
+  border-radius: 50%;
+  height: 100%;
   position: absolute;
-  top:4vh;
-  right: 6vw;
+  overflow: hidden;
 }
-
-.carousel-item {
-
-  height: 36.83vw;
-  width: 46.25vw;
-}
-.carousel-item .w-100{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-
-
-}
-.carousel-item .h-100{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+.carouselPic{
+  border-radius: 50%;
+  height: 35vw;
+  top: 50%;
+  transform: translateY(7%);
+  position: relative;
 
 }
 
+.carousel-caption{
+  padding: 0;
+}
 .info-title {
   margin-top: 9.375vw;
 }
@@ -140,6 +166,36 @@ h5{
 .hide {
   opacity: 0;
 }
-.hiddenPhoto{
+.hidden{
   pointer-events: none;
 }
+/* Add an extra .carousel parent class to increase specifity
+   avoiding the use of !important flag. */
+.carousel .carousel-indicators li {
+  background-color: #fff;
+  background-color: rgba(70, 70, 70, 0.75);
+}
+
+.carousel .carousel-indicators .active {
+  background-color: #444;
+}
+
+/* @media (max-width: 1000px){
+.front-div{
+  display: none;
+}
+.front-image{
+  display: none;
+}
+
+
+.front-div-small{
+  display: block;
+}
+.front-image-small{
+  display: block;
+  height: 100%;
+
+}
+
+} */
