@@ -4,6 +4,7 @@ body {
   font-family: "Ubuntu";
   background-color: #f2efe9;
 }
+
 h1 {
   font-size: 8vw;
   font-family: "Poppins", Sans-serif;
@@ -16,74 +17,79 @@ h2 {
   font-size: 3.5vw;
   margin-top: 0.85vw;
   color: #E9EBE8;
+}
 
+button {
+  font-size: 175px;
+  position: relative;
+  top: 45vh;
 }
 
 .front-image {
   display: block;
-
   margin-left: auto;
   margin-right: auto;
   margin: auto;
   position: absolute;
   height: 100%;
   width: auto;
-
-
 }
-.front-image-small {
 
+.front-image-small {
   display: none;
+  height: 100vh;
   margin-left: auto;
   margin-right: auto;
   position: absolute;
-
 }
-/* If the page width is too small */
 
+/* If the page width is too small */
 .inBack {
   opacity: 0.5;
 }
 
 .front-div {
-display: block;
+  display: block;
   width: 100%;
   height: 100%;
   position: absolute;
-
   left: 0;
 }
-.front-div-small{
-  display: none;
+
+.front-div-large {
+  display: block;
   width: 100%;
   height: 100%;
-    position: absolute;
+  position: absolute;
+  left: 0;
+}
+
+.front-div-small {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
   top: 0;
   left: 0;
 }
-
 
 .round {
   border: solid;
   border-width: 0.08vw;
   border-color: black;
   text-align: center;
-  position: relative;
-  bottom: 95vh;
+  position: absolute;
+
   left: 3.12vw;
-  /* width: 500px; */
+  top: 3.5vh;
   height: 35vw;
   width: 35vw;
   border-radius: 50%;
   display: block;
 }
 
-
-
-
 /* Everything in the background */
 .round-lrg {
-
   border: solid;
   border-width: 1px;
   border-color: black;
@@ -95,10 +101,9 @@ display: block;
   width: 40vw;
   border-radius: 50%;
   display: block;
-
 }
-.second-round-lrg {
 
+.second-round-lrg {
   border: solid;
   border-width: 1px;
   border-color: black;
@@ -110,55 +115,64 @@ display: block;
   width: 40vw;
   border-radius: 50%;
   display: block;
-
 }
 
 .info-photo {
   border: solid;
-  border-color:black;
+  border-color: black;
   height: 80%;
   position: absolute;
-  bottom:10%;
+  bottom: 10%;
   right: 10px;
   border-radius: 5%;
-
 }
 
-.carousel-indicators{
+.carousel-indicators {
   border-radius: 50%;
   margin: 0;
 }
-.carousel > a{
+
+.carousel>a {
   height: 25%;
   transform: translateY(148%);
 }
 
-.carousel-inner{
-    border-radius: 50%;
+.carousel-inner {
+  border-radius: 50%;
   height: 100%;
 }
-.carousel-item{
+
+.carousel-item {
   border-radius: 50%;
 }
 
-.carouselCircle{
+.carouselCircle {
   border-radius: 50%;
   height: 100%;
   position: absolute;
   overflow: hidden;
 }
-.carouselPic{
+
+.carouselPic {
   border-radius: 50%;
   height: 35vw;
   top: 50%;
   transform: translateY(7%);
   position: relative;
-
+}
+.carouselPic-mobile {
+  border-radius: 50%;
+  height: 90vw;
+  top: 50%;
+  transform: translateY(3%);
+  position: relative;
 }
 
-.carousel-caption{
+
+.carousel-caption {
   padding: 0;
 }
+
 .info-title {
   margin-top: 9.375vw;
 }
@@ -166,9 +180,11 @@ display: block;
 .hide {
   opacity: 0;
 }
-.hidden{
+
+.hidden {
   pointer-events: none;
 }
+
 /* Add an extra .carousel parent class to increase specifity
    avoiding the use of !important flag. */
 .carousel .carousel-indicators li {
@@ -180,22 +196,77 @@ display: block;
   background-color: #444;
 }
 
-@media (max-width: 1000px){
-.front-div{
+.round-small{
   display: none;
 }
-.front-image{
+.round-empty{
   display: none;
 }
-
-
-.front-div-small{
+.second-round-lrg-mobile {
+  border: solid;
+  border-width: 1px;
+  border-color: black;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%;
+  height: 95vw;
+  width: 95vw;
+  border-radius: 50%;
   display: block;
 }
-.front-image-small{
-  display: block;
+.carouselCircleMobile {
+  border-radius: 50%;
   height: 100%;
+  position: absolute;
+  overflow: hidden;
 
 }
+
+
+@media (max-width: 1000px) {
+  .round-empty {
+    display: none;
+    position: absolute;
+    left: 15.5vw;
+    top: 6.5vh;
+    height: 15vw;
+    width: 15vw;
+  }
+
+  .front-div-large {
+    display: none;
+  }
+
+  .front-image {
+    display: none;
+  }
+
+  .round-small {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+    height: 90vw;
+    width: 90vw;
+  }
+
+  .front-div-small {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .front-image-small {
+    display: block;
+    height: 100vh;
+  }
+
+  .round {
+    display: none;
+  }
+
 
 }
