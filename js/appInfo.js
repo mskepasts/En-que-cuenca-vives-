@@ -1,12 +1,11 @@
 var fadeSpeed = 8;
 var clicked = false;
 var another = false;
+var infoSmall = false;
 
 
-$(document).ready(function() {
-    // $('map').imageMapResize();
-    $('img[usemap]').rwdImageMaps();
-});
+$('img[usemap]').rwdImageMaps();
+
 
 $('.map').maphilight({
   fill: true,
@@ -30,7 +29,7 @@ $('.map').maphilight({
   shadowPosition: 'outside',
   shadowFrom: false
 });
-$(window).on("resize", function(){
+$(window).on("resize", function() {
 
   $('.map').maphilight({
     fill: true,
@@ -54,8 +53,23 @@ $(window).on("resize", function(){
     shadowPosition: 'outside',
     shadowFrom: false
   });
+  if ($(window).width() < 1000) {
+    $(".round").hide();
+    if (infoSmall)
+      $(".round-empty").show();
+    else
+      $(".round-small").show();
+  } else {
+    if (infoSmall)
+      $(".round-empty").hide();
+    else
+      $(".round-small").hide();
+    if (!clicked)
+      $(".round").show();
+  }
 })
-// photos\Cuenca Rio Fucha\photo1.png
+
+
 function writeInfo(name) {
   $(".front-image").addClass("inBack");
   $(".round-lrg").attr("src", "circles/" + name + ".png");
@@ -72,12 +86,25 @@ function writeInfo(name) {
 
 }
 
+function writeInfoMobile(name) {
+  $(".front-image-small").addClass("inBack");
+  $(".carouselCircleMobile").attr("src", "CirclesForMobile/Blank/" + name + ".png");
+  $("#first-mobile").attr("src", "CirclesForMobile/Info/" + name + ".png");
+  $("#second-mobile").attr("src", "photos/" + name + "/photo1.png");
+  $("#third-mobile").attr("src", "photos/" + name + "/photo2.png");
+  $("#forth-mobile").attr("src", "photos/" + name + "/photo3.png");
+  fadeUnfadeTwoElements(".round-empty", ".second-round-lrg-mobile");
+
+  // unfade(".second-round-lrg", 2 * fadeSpeed);
+  $(".second-round-lrg-mobile").removeClass("hidden")
+  unfade(".carouselCircleMobile", 2 * fadeSpeed);
+
+}
+
 function switchSame(name) {
 
   fadeUnfadeOneElement(".round-lrg", name);
   fadeUnfadeOneElement(".second-round-lrg", name);
-
-  // $(".round-lrg").removeClass("hide");
 
 }
 
@@ -108,6 +135,7 @@ function fadeUnfadeOneElement(element, name) {
 
 function unfade(element) {
   var op = 0.1; // initial opacity
+  $(element).css("opacity", op);
   $(element).css("display", "block");
 
   var timer = setInterval(function() {
@@ -184,41 +212,94 @@ function waitForClick() {
 
 
 }
+function waitForClickMobile() {
+
+  fadeUnfadeTwoElements(".second-round-lrg-mobile", ".round-empty");
+  $(".front-image-small").removeClass("inBack");
+  $(".round-lrg-mobile").addClass("hide");
+  fade(".carouselCircle");
 
 
+}
 
 
 
 
 
 function main() {
-  $("area").click(function(event) {
+
+
+  $(".front-div").click(function(event) {
     event.preventDefault()
   });
-  $(window).on("resize", function() {
-    $(".front")
-  })
+
+  $(".tap").click(function(event) {
+
+    if (!infoSmall) {
+      fadeUnfadeTwoElements(".round-small", ".round-empty");
+      $(".front-div-small").removeClass("inBack");
+      infoSmall = true;
+    }
+  });
+
+  $(".round-empty").click(function(event) {
+    if (infoSmall) {
+      $(".front-div-small").addClass("inBack");
+      fadeUnfadeTwoElements(".round-empty", ".round-small");
+      infoSmall = false;
+    }
+  });
 
   $(".mapIMG").on("click", function(event) {
-    // clicked = false;
-    if (!clicked) {
-      writeInfo(event.target.id);
-      console.log(event.target.id);
-    } else
-      another = true;
+    if ($(window).width() > 1000) {
+      if (!clicked) {
+        writeInfo(event.target.id);
+        console.log(event.target.id);
+      } else
+        another = true;
+    } else {
+      if (!clicked) {
+        console.log(event.target.id);
+        writeInfoMobile(event.target.id);
+
+      } else
+        another = true;
+
+    }
   });
 
   $(".front-div").on("click", function(event) {
-    if (another == true) {
-      switchSame(event.target.id);
-      another = false;
-    } else if (clicked) {
-      console.log("still")
-      waitForClick();
-      clicked = false;
-    } else
-    if ($(".round").hasClass("gone"))
-      clicked = true;
+    if ($(window).width() > 1000) {
+      if (another == true) {
+        switchSame(event.target.id);
+        another = false;
+      } else if (clicked) {
+        console.log("still")
+        waitForClick();
+        clicked = false;
+      } else
+      if ($(".round").hasClass("gone"))
+        clicked = true;
+    } else {
+      if (another == true) {
+        switchSameMobile(event.target.id);
+        another = false;
+      } else if (clicked) {
+        console.log("still")
+        waitForClickMobile();
+        clicked = false;
+      } else {
+        if (infoSmall) {
+          if ($(".round-empty").hasClass("gone"))
+            clicked = true;
+        }
+        if (!infoSmall) {
+          if ($(".round-small").hasClass("gone"))
+            clicked = true;
+
+        }
+      }
+    }
   });
 
 }
