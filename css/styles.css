@@ -3,6 +3,7 @@ body {
   align-items: center;
   font-family: "Ubuntu";
   background-color: #f2efe9;
+
 }
 
 h1 {
@@ -24,6 +25,11 @@ button {
   position: relative;
   top: 45vh;
 }
+img[usemap] {
+		border: none;
+    position: absolute;
+
+	}
 
 .front-image {
   display: block;
@@ -37,7 +43,7 @@ button {
 
 .front-image-small {
   display: none;
-  height: 100vh;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
   position: absolute;
@@ -54,6 +60,7 @@ button {
   height: 100%;
   position: absolute;
   left: 0;
+
 }
 
 .front-div-large {
@@ -183,6 +190,7 @@ button {
 
 .hidden {
   pointer-events: none;
+  display: none;
 }
 
 /* Add an extra .carousel parent class to increase specifity
@@ -214,7 +222,7 @@ button {
   height: 95vw;
   width: 95vw;
   border-radius: 50%;
-  display: block;
+  display: hidden;
 }
 .carouselCircleMobile {
   border-radius: 50%;
@@ -224,6 +232,27 @@ button {
 
 }
 
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(10%);
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+margin-top: 8px;
+height: 150px;
+width: 50px;
+}
+.carousel-control-next-icon{
+  margin-right: 15px;
+}
+.carousel-control-prev-icon{
+  margin-left: 15px;
+}
+
+#carousel2{
+  touch-action: pinch-zoom;
+}
 
 @media (max-width: 1000px) {
   .round-empty {
@@ -255,13 +284,14 @@ button {
 
   .front-div-small {
     display: block;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
   }
 
   .front-image-small {
     display: block;
-    height: 100vh;
+    height: 100%;
+    width: auto;
   }
 
   .round {
