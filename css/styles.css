@@ -184,12 +184,8 @@ img[usemap] {
   margin-top: 9.375vw;
 }
 
-.hide {
-  opacity: 0;
-}
 
 .hidden {
-  pointer-events: none;
   display: none;
 }
 
